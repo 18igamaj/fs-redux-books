@@ -9,6 +9,13 @@ import App from './components/App/App';
 
 const bookList = (state = [], action) => {
   // TODO - set book list with data from server
+  if(action.type === 'SET_BOOK_LIST'){
+    //payload is response.data from GET to /books
+    //payload/response.data is all of the books
+    // this will replace old book list with fresh new book list
+    // don't need spread operator - don't care about old value
+    return action.payload
+  }
   return state;
 }
 
